@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './layout.module.scss';
 import { ActiveLink } from '../active-link';
 import { Footer } from './footer/footer';
+import { Icon } from 'semantic-ui-react';
+import { Hamburger } from '../atoms/hamburger/hamburger';
 
 export const Layout = ({ children }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuOpen = () => {
+    setIsMenuOpen(state => !state);
+  };
+
+  const handleSelectLink = () => {
+    console.log('click');
+    setIsMenuOpen(false);
+  };
+
   return (
     <React.Fragment>
       <div className={styles.container}>
-        <header className={styles.header}>
+        <header className={`${styles.header} ${isMenuOpen ? styles.open : ''}`}>
           <div className={styles.headerSidebar}>
             <div className={styles.photo} />
             <p>
@@ -21,26 +34,29 @@ export const Layout = ({ children }) => {
             </h1>
           </div>
           <ul className={styles.menuList}>
-            <li>
+            <li onClick={handleSelectLink}>
               <ActiveLink href="/">Home</ActiveLink>
             </li>
-            <li>
+            <li onClick={handleSelectLink}>
               <ActiveLink href="/about">A propos</ActiveLink>
             </li>
-            <li>
+            <li onClick={handleSelectLink}>
               <ActiveLink href="/services">Services</ActiveLink>
             </li>
-            <li>
+            <li onClick={handleSelectLink}>
               <ActiveLink href="/realisations">Réalisations</ActiveLink>
             </li>
-            <li>
+            <li onClick={handleSelectLink}>
               <ActiveLink href="/blog">Blog</ActiveLink>
             </li>
-            <li>
+            <li onClick={handleSelectLink}>
               <ActiveLink href="/contact">Contact</ActiveLink>
             </li>
           </ul>
         </header>
+        <div className={styles.mobileMenu}>
+          <Hamburger onClick={handleMenuOpen} />
+        </div>
         <div className={styles.content}>{children}</div>
       </div>
       <Footer />

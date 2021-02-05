@@ -3,7 +3,7 @@ import styles from '../styles/pages/index/index.module.scss';
 import React, { useState, useRef, useEffect } from 'react';
 import { PageSection, Portfolio, SkillsGrid } from '../components';
 import { ContactMe } from '../components/homepage/section/contact-me';
-import smoothscroll from 'smoothscroll-polyfill';
+import Image from 'next/image';
 
 const titles = [
   'Développeur Frontend ',
@@ -36,6 +36,12 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <section className={styles.bgHero}>
+          <Image
+            src="/assets/bg-hero.jpg"
+            alt="Nicolas MARET développeur React"
+            layout="fill"
+            quality={20}
+          ></Image>
           <div className={styles.bgText}>
             <h3>
               Nicolas <strong>MARET</strong>
