@@ -1,0 +1,42 @@
+.card {
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover > .hover {
+    display: flex;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+  .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .hoverContent {
+      color: white;
+      text-align: center;
+      p {
+        color: #dc3545;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  .card {
+    height: 350px;
+  }
+}

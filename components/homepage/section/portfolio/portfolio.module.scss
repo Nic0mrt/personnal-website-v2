@@ -1,0 +1,28 @@
+.container {
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 32px;
+    padding: 2rem 0;
+  }
+  .bottom {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 990px) {
+  .container {
+    .grid {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .container {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

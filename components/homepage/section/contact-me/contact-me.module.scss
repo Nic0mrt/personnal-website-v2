@@ -1,0 +1,33 @@
+.container {
+  background-image: url('/assets/bg-hero.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  color: #fff;
+  .bg {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    .workTogether {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  .container {
+    .bg {
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .contactText {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
