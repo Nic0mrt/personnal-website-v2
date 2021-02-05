@@ -16,8 +16,5 @@
     "semantic-ui-react": "^2.0.3",
     "smoothscroll-polyfill": "^0.4.4"
   },
-  "devDependencies": {
-    "@iconify-icons/cib": "^1.1.0",
-    "@iconify/react": "^2.0.0-rc.6"
-  }
+  "devDependencies": {}
 }
