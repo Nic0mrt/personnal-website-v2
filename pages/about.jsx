@@ -20,7 +20,7 @@ const about = () => {
       <Page title="A propos de moi" subtitle="Pour un peu mieux me connaitre">
         <div className={styles.container}>
           <div className={styles.photoContainer}>
-            <Image src="/assets/nicolas.jpg" height={535} width={400} />
+            <Image src="/assets/Nicolas.jpg" height={535} width={400} />
           </div>
           <div className={styles.aboutContainer}>
             <h4 className={styles.aboutTitle}>Qui suis-je ?</h4>
