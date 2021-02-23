@@ -78,7 +78,7 @@ function Home({ projects }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const res = await fetch(
     `${process.env.STRAPI_URL}projets?_sort=id:DESC&_limit=4`
   );
@@ -90,7 +90,7 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: { projects: data }, // will be passed to the page component as props
+    props: { projects: data },
   };
 }
 

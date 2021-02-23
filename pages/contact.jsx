@@ -213,7 +213,6 @@ const contact = ({
 };
 
 export async function getStaticProps() {
-  // Connect to Database using DB properties
   return {
     props: {
       EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
