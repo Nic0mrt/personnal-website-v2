@@ -10,8 +10,7 @@ const titles = [
   'Développeur React.JS ',
   'Développeur Freelance ',
 ];
-
-export default function Home() {
+function Home({ projects }) {
   const [cpt, setCpt] = useState(0);
   const section = useRef(null);
   useEffect(() => {
@@ -37,6 +36,7 @@ export default function Home() {
       <div className={styles.container}>
         <section className={styles.bgHero}>
           <Image
+            priority
             src="/assets/bg-hero.jpg"
             alt="Nicolas MARET développeur React"
             layout="fill"
@@ -71,9 +71,27 @@ export default function Home() {
           subtitle="Des exemples de réalisations"
           bgColor="#f7f7f7"
         >
-          <Portfolio />
+          <Portfolio projects={projects} />
         </PageSection>
       </div>
     </React.Fragment>
   );
 }
+
+export async function getStaticProps(context) {
+  const res = await fetch(
+    'http://localhost:1337/projets?_sort=id:DESC&_limit=4'
+  );
+  const data = await res.json();
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { projects: data }, // will be passed to the page component as props
+  };
+}
+
+export default Home;

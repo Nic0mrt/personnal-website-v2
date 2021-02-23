@@ -15,13 +15,6 @@ export const SkillsGrid = () => {
       <SkillCard name="Node.JS" icon="nodeJS" color="#8cbf3d" />
       <SkillCard name="MongoDB" icon="mongoDB" color="#569234" />
       <SkillCard name="Mapbox" icon="mapbox" color="#dc3545" />
-      <div className={styles.knowMore}>
-        <Link href="/about">
-          <a>
-            <Button>En savoir plus ...</Button>
-          </a>
-        </Link>
-      </div>
     </div>
   );
 };
