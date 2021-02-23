@@ -9,7 +9,7 @@ export const Card = ({ project }) => {
         <h5 className={styles.title}>{project.title}</h5>
         <div className={styles.card}>
           <Image
-            src={`http://localhost:1337${project.images[0].url}`}
+            src={`${project.images[0].url}`}
             alt={project.images[0].alternativeText}
             layout="fill"
           ></Image>

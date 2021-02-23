@@ -80,7 +80,7 @@ function Home({ projects }) {
 
 export async function getStaticProps(context) {
   const res = await fetch(
-    'http://localhost:1337/projets?_sort=id:DESC&_limit=4'
+    `${process.env.STRAPI_URL}projets?_sort=id:DESC&_limit=4`
   );
   const data = await res.json();
   if (!data) {
