@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const Card = ({ project }) => {
   return (
-    <React.Fragment>
+    <React.Fragment key={project.id}>
       <div>
         <h5 className={styles.title}>{project.title}</h5>
         <div className={styles.card}>

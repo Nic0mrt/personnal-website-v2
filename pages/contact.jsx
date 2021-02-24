@@ -17,34 +17,42 @@ const validationSchema = Yup.object({
   message: Yup.string().required('Champ requis'),
 });
 
-const contact = ({
-  EMAILJS_TEMPLATE_ID,
-  EMAILJS_USER_ID,
-  EMAILJS_SERVICE_ID,
-}) => {
+const contact = () => {
   const [formMessage, setFormMessage] = useState({
     error: false,
     message: '',
   });
 
-  const sendEmail = async (values, actions) => {
+  const sendEmail = (values, actions) => {
     try {
-      const result = await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        values,
-        EMAILJS_USER_ID
-      );
-      console.log(result.text);
+      actions.setSubmitting(true);
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          document.querySelector('#form'),
+          process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+        )
+        .then(result => {
+          console.log('success');
+          setFormMessage({
+            error: false,
+            message: 'message bien envoyé',
+          });
+          actions.resetForm();
+          actions.setSubmitting(false);
+        })
+        .catch(error => {
+          console.log(error);
+          setFormMessage({
+            error: true,
+            message: "Erreur lors de l'envoi du message",
+          });
+          actions.setSubmitting(false);
+        });
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
-
-    setFormMessage({
-      error: false,
-      message: 'message bien envoyé',
-    });
-    actions.setSubmitting(false);
   };
 
   return (
@@ -79,6 +87,7 @@ const contact = ({
           onSubmit={sendEmail}
         >
           {({
+            handleSubmit,
             handleChange,
             handleBlur,
             values,
@@ -88,23 +97,7 @@ const contact = ({
             isSubmitting,
             touched,
           }) => (
-            <Form
-              onSubmit={event => {
-                console.log(EMAILJS_SERVICE_ID);
-                console.log(EMAILJS_USER_ID);
-                console.log(EMAILJS_TEMPLATE_ID);
-
-                emailjs
-                  .sendForm(
-                    EMAILJS_SERVICE_ID,
-                    EMAILJS_TEMPLATE_ID,
-                    event.target,
-                    EMAILJS_USER_ID
-                  )
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
-              }}
-            >
+            <Form id="form" onSubmit={handleSubmit}>
               <Form.Field>
                 <label>Nom (requis)</label>
                 <Input
@@ -212,14 +205,14 @@ const contact = ({
   );
 };
 
-export async function getStaticProps() {
-  return {
-    props: {
-      EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
-      EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
-      EMAILJS_SERVICE_ID: process.env.EMAILJS_SERVICE_ID,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   return {
+//     props: {
+//       EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
+//       EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
+//       EMAILJS_SERVICE_ID: process.env.EMAILJS_SERVICE_ID,
+//     },
+//   };
+// }
 
 export default contact;
