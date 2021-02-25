@@ -9,12 +9,43 @@
       justify-content: center;
     }
   }
+  .technologies {
+    h4 {
+      color: black;
+      font-size: 1.5rem;
+    }
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    img {
+      max-width: 80%;
+      display: block;
+      margin: 0 auto;
+    }
+    h4 {
+      color: black;
+      font-size: 1.5rem;
+    }
+    ul {
+      li {
+        margin: 1rem 0;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 990px) {
   .container {
     .carousel {
       width: 100%;
+    }
+    .description {
+      img {
+        max-width: 100%;
+      }
     }
   }
 }

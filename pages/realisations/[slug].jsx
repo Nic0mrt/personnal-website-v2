@@ -4,6 +4,7 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@material-ui/core';
 import Image from 'next/image';
 import style from './realisation.module.scss';
+import ReactMarkdown from 'react-markdown';
 
 export default function Project({ project }) {
   return (
@@ -25,15 +26,17 @@ export default function Project({ project }) {
             })}
           </Carousel>
 
-          <div className={style.description}>{project.description}</div>
-
-          <div>
-            Technologies :
+          <div className={style.technologies}>
+            <h4>Technologies :</h4>
             <ul>
               {project.technologies.map(techno => (
                 <li key={techno.id}>{techno.name}</li>
               ))}
             </ul>
+          </div>
+
+          <div className={style.description}>
+            <ReactMarkdown>{project.description}</ReactMarkdown>
           </div>
         </div>
       </Page>
