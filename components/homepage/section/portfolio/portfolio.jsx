@@ -6,7 +6,7 @@ import { Button } from '../../../atoms';
 import Link from 'next/link';
 import { ProjectsService } from '../../../services/projects';
 
-export const Portfolio = ({ projects }) => {
+export const Portfolio = ({ projects, showSeeMore = true }) => {
   return (
     <div className={styles.container}>
       <div className={styles.grid}>
@@ -15,13 +15,15 @@ export const Portfolio = ({ projects }) => {
             return <Card project={project}></Card>;
           })}
       </div>
-      <div className={styles.bottom}>
-        <Link href="/realisations">
-          <a>
-            <Button>En voir plus</Button>
-          </a>
-        </Link>
-      </div>
+      {showSeeMore && (
+        <div className={styles.bottom}>
+          <Link href="/realisations">
+            <a>
+              <Button>En voir plus</Button>
+            </a>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

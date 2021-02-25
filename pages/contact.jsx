@@ -33,7 +33,7 @@ const contact = () => {
           document.querySelector('#form'),
           process.env.NEXT_PUBLIC_EMAILJS_USER_ID
         )
-        .then(result => {
+        .then(() => {
           console.log('success');
           setFormMessage({
             error: false,
@@ -204,15 +204,5 @@ const contact = () => {
     </React.Fragment>
   );
 };
-
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
-//       EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
-//       EMAILJS_SERVICE_ID: process.env.EMAILJS_SERVICE_ID,
-//     },
-//   };
-// }
 
 export default contact;

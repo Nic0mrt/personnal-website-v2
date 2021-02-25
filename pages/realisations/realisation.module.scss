@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  .carousel {
+    align-self: center;
+    width: 80%;
+    .paper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .container {
+    .carousel {
+      width: 100%;
+    }
+  }
+}

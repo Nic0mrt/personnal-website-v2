@@ -13,7 +13,6 @@ export const Layout = ({ children }) => {
   };
 
   const handleSelectLink = () => {
-    console.log('click');
     setIsMenuOpen(false);
   };
 
