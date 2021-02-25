@@ -10,7 +10,7 @@ export const ContactMe = () => {
         <div className={styles.contactText}>
           <div className={styles.workTogether}>Travaillons ensemble!</div>
           <div className={styles.workTogetherSub}>
-            Venez me parler de votre projet
+            Parlez-moi de votre projet
           </div>
         </div>
         <Link href="/contact">

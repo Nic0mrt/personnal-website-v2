@@ -15,6 +15,7 @@ export const Card = ({ project }) => {
               alt={project.images[0].alternativeText}
               layout="fill"
               objectFit="contain"
+              objectPosition="center"
             ></Image>
             <div className={styles.hover}>
               <div className={styles.hoverContent}>

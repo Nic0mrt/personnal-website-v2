@@ -18,7 +18,9 @@ const realisations = ({ projects }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.STRAPI_URL}projets?_sort=id:ASC`);
+  const res = await fetch(
+    `${process.env.STRAPI_URL}projets?_sort=position:ASC`
+  );
   const data = await res.json();
   if (!data) {
     return {

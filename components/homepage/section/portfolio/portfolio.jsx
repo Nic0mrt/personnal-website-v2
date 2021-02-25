@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './portfolio.module.scss';
-import Image from 'next/image';
 import { Card } from './card';
 import { Button } from '../../../atoms';
 import Link from 'next/link';
-import { ProjectsService } from '../../../services/projects';
 
 export const Portfolio = ({ projects, showSeeMore = true }) => {
   return (
