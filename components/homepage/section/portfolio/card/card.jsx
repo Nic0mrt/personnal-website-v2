@@ -14,6 +14,7 @@ export const Card = ({ project }) => {
               src={`${project.images[0].url}`}
               alt={project.images[0].alternativeText}
               layout="fill"
+              objectFit="contain"
             ></Image>
             <div className={styles.hover}>
               <div className={styles.hoverContent}>

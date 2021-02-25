@@ -4,7 +4,7 @@
 }
 .card {
   position: relative;
-  height: 500px;
+  height: 300px;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -31,7 +31,9 @@
     align-items: center;
     .hoverContent {
       h4 {
-        margin: 0 0 2rem 0;
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+        color: #dc3545;
       }
       color: white;
       text-align: center;
@@ -39,8 +41,14 @@
         text-align: left;
       }
       p {
-        color: #dc3545;
-        font-size: 1.5rem;
+        background-color: #dc3545;
+        color: white;
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+        padding: 0.2rem 0;
+        font-size: 1rem;
+        border-radius: 4px;
       }
     }
   }
@@ -48,6 +56,6 @@
 
 @media (max-width: 990px) {
   .card {
-    height: 350px;
+    height: 200px;
   }
 }
