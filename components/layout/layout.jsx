@@ -43,9 +43,6 @@ export const Layout = ({ children }) => {
               <ActiveLink href="/realisations">Réalisations</ActiveLink>
             </li>
             <li onClick={handleSelectLink}>
-              <ActiveLink href="/blog">Blog</ActiveLink>
-            </li>
-            <li onClick={handleSelectLink}>
               <ActiveLink href="/contact">Contact</ActiveLink>
             </li>
           </ul>

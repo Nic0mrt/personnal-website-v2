@@ -8,13 +8,17 @@ export const Footer = () => {
       <div className={styles.contact}>
         <div className={styles.infos}>
           <Icon name="send" size="big" />
-          <div href="mailto:maretnicolas22@gmail.com">
-            maretnicolas22@gmail.com
+          <div className={styles.infosMail}>
+            <a href="mailto:maretnicolas22@gmail.com">
+              maretnicolas22@gmail.com
+            </a>
           </div>
         </div>
         <div className={styles.infos}>
           <Icon name="phone" size="big" />
-          <div>+33 (0)7 71 67 04 64</div>
+          <div>
+            <a href="tel:+33771670464">+33 (0)7 71 67 04 64</a>
+          </div>
         </div>
         <div className={styles.infos}>
           <Icon name="map" size="big" />

@@ -10,7 +10,10 @@ const realisations = ({ projects }) => {
         <title>Réalisations | Nicolas MARET - Développeur React</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Page title="Mes réalisations">
+      <Page
+        title="Mes réalisations"
+        subtitle="Quelques exemples des projets de projets réalisés"
+      >
         <Portfolio projects={projects} showSeeMore={false} />
       </Page>
     </React.Fragment>

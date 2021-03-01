@@ -28,13 +28,18 @@ const about = () => {
               Développeur React.JS passionné par les technlogies Javascript
             </h3>
             <p className={styles.aboutParagraph}>
-              I am a freelancer based in the United Kingdom and i have been
-              building noteworthy UX/UI designs and websites for years, which
-              comply with the latest design trends. I help convert a vision and
-              an idea into meaningful and useful products. Having a sharp eye
-              for product evolution helps me prioritize tasks, iterate fast and
-              deliver faster.
+              Développeur Frontend Freelance basé à Lyon, je vous accompagne
+              dans la réalisation de vos projets d'applications avec React.
+              Veritable passionné par le monde du web je suis en constante
+              recherche de performance et d'amélioration et je vous apporterai
+              mon envie et mon sens du travail bien fait !
             </p>
+            <p>
+              Faisons connaissance et faites moi confiance dans vos futurs
+              projets ou venez voir quelques-uns de mes projets{' '}
+              <a href="/realisations">ici</a>.
+            </p>
+
             <div className={styles.divider}></div>
             <div className={styles.aboutInfos}>
               <div className={styles.aboutInfosName}>
