@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styles from './layout.module.scss';
 import { ActiveLink } from '../active-link';
 import { Footer } from './footer/footer';
-import { Icon } from 'semantic-ui-react';
 import { Hamburger } from '../atoms/hamburger/hamburger';
+import Head from 'next/head';
 
 export const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +18,15 @@ export const Layout = ({ children }) => {
 
   return (
     <React.Fragment>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Nicolas MARET Développeur freelance spécialisé React vous accompagne pour tous vos projets frontend, disponible sur Lyon ou remote"
+        />
+        <meta name="title" content="Nicolas MARET - Développeur React à Lyon" />
+        <meta name=" robots " content="index, follow" />
+      </Head>
       <div className={styles.container}>
         <header className={`${styles.header} ${isMenuOpen ? styles.open : ''}`}>
           <div className={styles.headerSidebar}>

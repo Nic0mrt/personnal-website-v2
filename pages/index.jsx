@@ -30,8 +30,7 @@ function Home({ projects }) {
   return (
     <React.Fragment>
       <Head>
-        <title>Home | Nicolas MARET - Développeur React</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>Accueil | Nicolas MARET - Développeur React</title>
       </Head>
       <div className={styles.container}>
         <section className={styles.bgHero}>
